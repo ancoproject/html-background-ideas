@@ -1,0 +1,127 @@
+
+body{
+    overflow: hidden;
+    background-image: url(/resourses/1769821049.417_ffxvi_2026-01-28_16-52-28_831.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0%;
+    height: 100vh;
+    width: 100vw;
+}
+
+header{
+    margin: 0%;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    padding: 20px;
+}
+
+nav {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(118, 144, 159);
+    border-radius: 6px;
+    color: rgb(73, 78, 123);
+    text-align: center;
+    justify-content: center;
+    
+
+}
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+nav::after, nav::before {
+    
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 91%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    background-image: conic-gradient(from var(--angle), transparent, rgba(73, 78, 123,0.5));
+    z-index: -1;
+    padding: 1px;
+    border-radius: 6px;
+    animation: 3s spin linear infinite;
+}
+
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    } 
+    to{
+        --angle: 360deg;
+    }
+}
+
+.climate{
+    text-align: left;
+    padding-left: 10px;
+    font-size: normal;
+}
+
+.stopwatch{
+    display: flex;
+    font-size: normal;
+    text-align: center;
+    justify-content: center;
+}
+.stopwatch p
+{
+    margin: 0%;
+    padding: 0%;
+}
+
+.username p{
+    text-align: right;
+    padding: 0%;
+    margin: 0%;
+    padding-right: 10px;
+    font-size: normal;
+}
+
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.stats {
+    position: relative;
+    width: vw;
+    height: 50vh;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+.mood{
+    position: absolute;
+    text-align: left;
+    color: rgb(73, 78, 123);
+    top: 80px;
+    left: 40px;
+    font-size: xx-large;
+}
+.reloj{
+    text-align: center;
+    font-size: 300px;
+    color: rgb(73, 78, 123);
+    margin: 0%;
+    padding: 0%;
+}
+.fecha{
+    position: absolute;
+    text-align: right;
+    color: rgb(73, 78, 123);
+    top: 340px;
+    right: 40px;
+    font-size: xx-large;
+}
