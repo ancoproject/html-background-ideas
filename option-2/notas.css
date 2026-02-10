@@ -1,6 +1,6 @@
 
 /*NOTAS*/
-.widget-notas{
+#notas{
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -10,8 +10,9 @@
 .widget-header{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
-.widget-notas h1{
+#notas h1{
     text-align: left;
     padding: 0%;
     padding-left: 0.5em;
@@ -19,11 +20,15 @@
     font-size:large;
     color: red;
 }
-.notes{
+#notes{
+    display: flex;
+    flex-direction: column;
     flex: 1;
     height: 150px;
+    width: 100%;
     overflow-y: auto;
     overflow-x: auto;
+    align-items: flex-start;
 }
 .nota span {
   display: inline-block;
@@ -31,6 +36,9 @@
   white-space: normal; 
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+p{
+    margin: 0px;
 }
 .input{
     display: flex; 
@@ -53,7 +61,7 @@
     border: none;
     border-radius: 5px;
     height: 100%;
-    transition: all 1s ease;
+    transition: all 0.4s ease;
 }
 .wipe:hover{
     color: white;
@@ -67,7 +75,7 @@
     border: none;
     border-radius: 5px;
     height: 100%;
-    transition: all 1s ease;
+    transition: all 0.4s ease;
 }
 .cargar:hover{
     color: white;

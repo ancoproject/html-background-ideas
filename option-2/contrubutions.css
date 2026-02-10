@@ -1,7 +1,7 @@
 .github{
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    display: flex; 
+    flex-direction: column; 
+    gap: 2em; 
 }
 .grid {
   display: grid;

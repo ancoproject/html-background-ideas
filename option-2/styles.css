@@ -17,6 +17,7 @@ body {
     gap: 2em;
 }
 .widget{
+    display: flex; flex-direction: column;
     margin: 1em;
     padding: 1em;
     background-color: white;
