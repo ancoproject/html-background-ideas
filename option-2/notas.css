@@ -1,0 +1,79 @@
+
+/*NOTAS*/
+.widget-notas{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 200px;
+}
+.widget-header{
+    display: flex;
+    justify-content: space-between;
+}
+.widget-notas h1{
+    text-align: left;
+    padding: 0%;
+    padding-left: 0.5em;
+    margin: 0%;
+    font-size:large;
+    color: red;
+}
+.notes{
+    flex: 1;
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.nota span {
+  display: inline-block;
+  max-width: 200px;   
+  white-space: normal; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.input{
+    display: flex; 
+    gap: 0.5em; 
+    width: 100%;
+}
+#input-notes{
+    flex: 1;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    padding: 5px 5px;
+    border-radius: 5px;
+    
+}
+.wipe{
+    margin: 0%;
+    padding: 5px 5px;
+    color: black;
+    background-color: rgb(236, 236, 236);
+    border: none;
+    border-radius: 5px;
+    height: 100%;
+    transition: all 1s ease;
+}
+.wipe:hover{
+    color: white;
+    background-color: #d79753;
+}
+.cargar{
+    margin: 0%;
+    padding: 5px 5px;
+    color: black;
+    background-color: rgb(236, 236, 236);
+    border: none;
+    border-radius: 5px;
+    height: 100%;
+    transition: all 1s ease;
+}
+.cargar:hover{
+    color: white;
+    background-color: #53D769;
+}
+.terminada{
+    text-decoration: line-through;
+    color: #8d8c8c;
+}

@@ -1,0 +1,32 @@
+
+/*CALENDARIO*/
+#widget-calendario{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+#widget-calendario h1{
+    text-align: left;
+    padding-left: 0.5em;
+    margin: 0%;
+    font-size:larger;
+    color: red;
+}
+.cabecera-calendario{
+    font-size: small;
+    text-align: center;
+    color: black;
+}
+.cuerpo-calendario td{
+    height: 1.5em;
+    width: 1.5em;
+    text-align: center;
+}
+.hoy{
+    border: 1px solid red;
+    background-color: red;
+    border-radius: 100%;
+    color: aliceblue;
+    font-weight: 700;
+}

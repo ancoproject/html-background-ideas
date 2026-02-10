@@ -2,64 +2,24 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reloj.css">
+    <link rel="stylesheet" href="calendario.css">
+    <link rel="stylesheet" href="notas.css">
+    <link rel="stylesheet" href="contrubutions.css">
 </head>
 <body>
     <main class="main-container" >
-        <div class="widget-1">
-            <div class="widget-calendario">
+        <div class="row">
+
+            <div class="widget" id="widget-calendario">
                 <h1 id="titulo"></h1>
                 <table id="calendario"> 
                     <thead class="cabecera-calendario"><tr> <th>L</th> <th>M</th> <th>M</th> <th>J</th> <th>V</th> <th>S</th> <th>D</th> </tr></thead> 
                     <tbody class="cuerpo-calendario" id="dias"></tbody> 
                 </table>
-
-                <!-- script para generar calendario -->
-                <script>
-                    function generarCalendario(mes, año){
-                        const diasContenedor = document.getElementById('dias');
-                        diasContenedor.innerHTML = '';
-
-                        const titulo = document.getElementById('titulo');
-                        const nombresMeses = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
-                        titulo.textContent = `${nombresMeses[mes]}`;
-
-                        const primerDia = new Date(año, mes, 1);
-                        const ultimoDia = new Date(año, mes + 1, 0);
-                        const totalDias = ultimoDia.getDate();
-
-                        let diaSemana = primerDia.getDay();
-                        diaSemana = (diaSemana === 0) ? 6 : diaSemana - 1;
-
-                        let fila = document.createElement('tr');
-                        for(let i = 0; i < diaSemana; i++){
-                            fila.appendChild(document.createElement('td'));
-                        }
-                        const hoy = new Date();
-                        for (let dia = 1; dia<= totalDias; dia++){
-                            const celda = document.createElement('td');
-                            celda.textContent = dia;
-
-                            if(
-                                dia === hoy.getDate() &&
-                                mes === hoy.getMonth() &&
-                                año === hoy.getFullYear()
-                            ){
-                                celda.classList.add('hoy');
-                            }
-                            fila.appendChild(celda);
-                            if((dia + diaSemana) % 7 === 0 || dia === totalDias){
-                                diasContenedor.appendChild(fila);
-                                fila = document.createElement('tr');
-                            }
-                        }
-                    }
-                    const fechaActual = new Date();
-                    generarCalendario(fechaActual.getMonth(), fechaActual.getFullYear());
-                </script>
-
             </div>
-            <hr>
-            <div class="widget-notas">
+
+            <div class="widget">
                 <div class="widget-header">
                 <h1 id="titulo">NOTAS</h1>
                 <button class="wipe" onclick="eliminarTerminadas()">WIPE</button>
@@ -67,48 +27,32 @@
                 <div class="notes" id="notes"></div>
                 <div class="input">
                     <input type="text" id="input-notes">
-                    <button class="cargar" onclick="agregarNota()">Agregar</button>
+                    <button class="cargar" onclick="agregarNota()">ADD</button>
                 </div>
                 <script>
-                    function agregarNota(){
-                        const texto = document.getElementById('input-notes').value.trim();
-                        if (texto === "") return;
-
-                        const notaContainer = document.createElement("p");
-                        notaContainer.classList.add("nota");
-
-                        const checkbox = document.createElement("input");
-                        checkbox.type = "checkbox";
-
-                        const span = document.createElement("span");
-                        span.textContent = texto;
-
-                        checkbox.addEventListener("change", function(){
-                            if (this.checked) {
-                                span.classList.add("terminada");
-                            } else {
-                                span.classList.remove("terminada");
-                            }
-                        });
-                        notaContainer.appendChild(checkbox);
-                        notaContainer.appendChild(span);
-
-                        document.getElementById("notes").appendChild(notaContainer);
-
-                        document.getElementById("input-notes").value = "";
-                    }
-                    function eliminarTerminadas(){ 
-                        const notas = document.querySelectorAll("#notes .nota"); 
-                        notas.forEach(nota => { 
-                            const checkbox = nota.querySelector("input[type='checkbox']"); 
-                            if (checkbox.checked) { 
-                                nota.remove();
-                            } 
-                        }); 
-                    }
+                    
                 </script>
             </div>
+
+            <div class="widget" id="github-widget"> 
+                <h1 id="titulo">CONTRIBUTIONS</h1> 
+                <div class="grid"></div> 
+            </div>
+
         </div>
+        <div class="row">
+
+            <div class="widget" id="clock">
+            </div>  
+
+        </div>
+        <div class="row"></div>
+        <div class="row"></div>
+        
+        
+        
+        
     </main>
+    <script src="scripts.js"></script>
 </body>
 </html>

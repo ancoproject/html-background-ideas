@@ -1,0 +1,23 @@
+.github{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 20px); /* 7 días */
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.day {
+  width: 20px;
+  height: 20px;
+  background-color: #ebedf0; /* gris claro por defecto */
+  border-radius: 4px;
+}
+.day[data-count="0"] { background-color: #ebedf0; }
+.day[data-count="1"] { background-color: #c6e48b; }
+.day[data-count="2"] { background-color: #7bc96f; }
+.day[data-count="3"] { background-color: #239a3b; }
+.day[data-count="4"] { background-color: #196127; }
